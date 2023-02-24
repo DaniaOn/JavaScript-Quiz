@@ -7,8 +7,8 @@
 // }
 
 
-const startGamebtn = document.getElementById('start-btn')
-const startGamebtn = document.getElementById('start-btn')
+var startGamebtn = document.getElementById('start-btn')
+var startGamebtn = document.getElementById('start-btn')
 const JSquestions = document.getElementById('questions-container')
 
 startGamebtn.addEventListener('click', startGame)
@@ -38,12 +38,35 @@ function showQuestion (question){
 }
 
 
-function selectAnswer (){
+function selectAnswer(e) {
+    const selectedBtn = e.target
+    const correct = selectedBtn.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+      setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+      nextButton.classList.remove('hide')
+    } else {
+      startButton.innerText = 'Restart'
+      startButton.classList.remove('hide')
+    }
+  }
   
-}
+  function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+      element.classList.add('correct')
+    } else {
+      element.classList.add('wrong')
+    }
+  }
+  
+  function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+  }
 //var of questions I'm going to ask reagrding JavaScript fundamentals
-
-
 
 const questions =[
     {question:'What is JavaScript?',
@@ -54,7 +77,7 @@ const questions =[
         {text:' is a style sheet language used for describing the presentation of a document written in a markup language', correct:false},
     ]};
     {question:'Which does not belong to the Primitive data type?',
-    answers:[
+    answers: [
         {text:'Object', correct:true},
         {text:'Numbers', correct:false},
         {text:'Strings', correct:false},
@@ -81,15 +104,15 @@ const questions =[
         {text:'Strings', correct:false},
         {text:'Boolean', correct:false},
     ]};
-]
+];
 
 // show next questions:
-function setNext
-//var for the scores
+function setNext() {
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+}
 
 
 // Start button 
 
 //the for loop for question and answer
-
-//Display Score 
