@@ -8,19 +8,28 @@
 
 
 var startGamebtn = document.getElementById('start-btn')
-var startGamebtn = document.getElementById('start-btn')
+const questionContainer = document.getElementById ('question-container')
+let shuffledQuestions, currentQuestionIndex
 const JSquestions = document.getElementById('questions-container')
+var timerElement = document.querySelector(".timer-count");
+const nextButton = document.getElementById('next-btn')
+const answerButtonsElement = document.getElementById ('answer-button')
+
+
 
 startGamebtn.addEventListener('click', startGame)
 
+
+//start button
 function startGame (){
-    console.log('Start')
     startGamebtn.classList.add('hide')
     JSquestions.classList.remove('hide')
+    questionContainer.classList.remove('hide')
     setQuestions()
 }
 
 function setQuestions (){
+    resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
@@ -36,7 +45,12 @@ function showQuestion (question){
         answerButtonsElement.appendChild(button)
     }) 
 }
-
+function resetState(){
+    nextButton.classList.add('hide') 
+    while (answerButtonsElement.firstChild){
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
+}
 
 function selectAnswer(e) {
     const selectedBtn = e.target
@@ -111,8 +125,3 @@ function setNext() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
-
-
-// Start button 
-
-//the for loop for question and answer
