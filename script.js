@@ -1,12 +1,3 @@
-//start the game
-
-// document.getElementById('bnt1').addEventListener("click", changeColor);
-// function changeCorlor(){
-//     document.getElementById('bnt1').innerHTML = "CLICK";
-//     document.getElementById('bnt1').style.backgroundColor ="orange";
-// }
-
-
 var startGamebtn = document.getElementById('start-btn')
 const questionContainer = document.getElementById ('question-container')
 let shuffledQuestions, currentQuestionIndex
@@ -15,10 +6,7 @@ var timerElement = document.querySelector(".timer-count");
 const nextButton = document.getElementById('next-btn')
 const answerButtonsElement = document.getElementById ('answer-button')
 
-
-
 startGamebtn.addEventListener('click', startGame)
-
 
 //start button
 function startGame (){
