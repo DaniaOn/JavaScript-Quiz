@@ -21,9 +21,9 @@ function setQuestions (){
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
-function showQuestion (question){
-    questionElement.innerText = question.question
-    question.ansewers.forEach(answer=>{
+function showQuestion (questions){
+    questionElement.innerText = questions.questions
+    questions.ansewers.forEach(answer=>{
         const button = createElement('button')
         button.classList.add('btn')
         if (answer.correct){
