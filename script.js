@@ -68,44 +68,50 @@ function selectAnswer(e) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
   }
-//var of questions I'm going to ask reagrding JavaScript fundamentals
+//var of questions about reagrding JavaScript fundamentals
 
 const questions =[
-    {question:'What is JavaScript?',
-    answers:[
-        {text:'is a scripting language', correct:true},
-        {text:'is one of the most popular and widely used programming language', correct:false},
-        {text:'It is specific to a single page in a session', correct:false},
-        {text:' is a style sheet language used for describing the presentation of a document written in a markup language', correct:false},
-    ]};
-    {question:'Which does not belong to the Primitive data type?',
-    answers: [
-        {text:'Object', correct:true},
-        {text:'Numbers', correct:false},
-        {text:'Strings', correct:false},
-        {text:'Boolean', correct:false},
-    ]};
-    {question:'What is not JavaScript Data Types?',
-    answers:[
-        {text:'Primitive', correct:false},
-        {text:'Trivial', correct:false},
-        {text:'Null', correct:true},
-        {text:'Composite', correct:false},
-    ]};
-    {question:'Which statement is not true?',
-    answers: [
-        {text:'JavaScript supports automatic type conversion', correct:false},
-        {text:'Functions in JavaScript are essential objects', correct:false},
-        {text:'The NULL value represents the no value or no object. It can be called as empty value/object.', correct:false},
-        {text:'JavaScript is not a case-sensitive language.', correct:true},
-    ]};
-    {question:'Which does not belong to the Primitive data type?',
-    answers:[
-        {text:'Undefined', correct:true},
-        {text:'Numbers', correct:false},
-        {text:'Strings', correct:false},
-        {text:'Boolean', correct:false},
-    ]};
+    {
+        question:'What is JavaScript?',
+        answers1:'is a scripting language',
+        answers2:'is one of the most popular and widely used programming language',
+        answers3:'It is specific to a single page in a session',
+        answers4:' is a style sheet language used for describing the presentation of a document written in a markup language',
+        correct:'is a scripting language'
+    },
+    {
+        question:'Which does not belong to the Primitive data type?',
+        answers1:'Object',
+        answers2:'Numbers',
+        answers2:'Strings',
+        answers4:'Boolean',
+        correct:'Object',
+    },
+    {
+        question:'What is not JavaScript Data Types?',
+        answers1:'Primitive',
+        answers2:'Trivial',
+        answers3:'Null',
+        answers4:'Composite',
+        correct:'Null',
+    },
+    {
+        question:'Which statement is not true?',
+        answers1:'JavaScript supports automatic type conversion',
+        answers2:'Functions in JavaScript are essential objects',
+        answers3:'The NULL value represents the no value or no object. It can be called as empty value/object.',
+        answers4:'JavaScript is not a case-sensitive language.',
+        correct:'JavaScript is not a case-sensitive language.'
+    },
+    {
+        question:'Which does not belong to the Primitive data type?',
+        answers1:'Undefined',
+        answers2:'Numbers',
+        answers3:'Strings',
+        answers4:'Boolean',
+        correct: 'Undefined',
+    },
+
 ];
 
 // show next questions:
